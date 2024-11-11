@@ -7,8 +7,27 @@ class TestZoo(unittest.TestCase):
 
     def test_child_ticket_price(self):
         self.assertEqual(self.zoo.get_ticket_price(5), 50)
-       
     # Add your additional test cases here.
+    def test_ticket_price1(self):
+        self.assertEqual(self.zoo.get_ticket_price(11), 50)
+    def test_ticket_price2(self):
+        self.assertEqual(self.zoo.get_ticket_price(15), 100)
+    def test_ticket_price3(self):
+        self.assertEqual(self.zoo.get_ticket_price(23), 150)
+    def test_ticket_price4(self):
+        self.assertEqual(self.zoo.get_ticket_price(61), 100)
+    def test_ticket_price_error(self):
+        self.assertEqual(self.zoo.get_ticket_price(-1), "Error")
+    def test_bva_1(self):
+        self.assertEqual(self.zoo.get_ticket_price(0), 50)
+        self.assertEqual(self.zoo.get_ticket_price(12), 50)
+    def test_bva_2(self):
+        self.assertEqual(self.zoo.get_ticket_price(13), 100)
+        self.assertEqual(self.zoo.get_ticket_price(20), 100)
+    def test_bva_3(self):
+        self.assertEqual(self.zoo.get_ticket_price(21), 150)
+        self.assertEqual(self.zoo.get_ticket_price(60), 150)
+        
 
 if __name__ == '__main__':
     unittest.main()
